@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="shortcut icon" href="img/oak_tecnologia_logo.jpg" type="image/x-icon">
+
+  <title>Cadastro de Produtos</title>
+
+</head>
+<body>
+    <div class="container">
+      <header>
+        <h1>Cadastro e Listagem de Produtos</h1>
+      </header>
+      <main>
+        <section id="formSection" class="form-section">
+          <h2>Cadastro de Produtos</h2>
+          <form id="productForm">
+            <div class="form-group">
+              <label for="name">Nome do Produto:</label>
+              <input type="text" id="name" placeholder="Digite o nome do produto" required>
+            </div>
+            <div class="form-group">
+              <label for="description">Descrição:</label>
+              <textarea id="description" rows="3" placeholder="Digite a descrição do produto" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="value">Valor:</label>
+              <input type="number" id="value" step="0.01" placeholder="Digite o valor do produto" required>
+            </div>
+            <div class="form-group">
+              <label>Disponível para venda:</label>
+              <select id="available">
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-primary">Cadastrar Produto</button>
+          </form>
+        </section>
+  
+        <section class="filter-section" id="filterSection">
+          <h2>Filtrar Produtos</h2>
+          <p>Use as opções abaixo para buscar ou filtrar os produtos cadastrados.</p>
+          <div class="filter-controls">
+            <input type="text" id="search" placeholder="Buscar produto pelo nome..." class="search-bar">
+            <select id="filterAvailable">
+              <option value="Todos">Todos os produtos</option>
+              <option value="Sim">Apenas disponíveis</option>
+              <option value="Não">Apenas indisponíveis</option>
+            </select>
+          </div>
+        </section>
+  
+        <section id="listSection" class="list-section">
+          <h2>Lista de Produtos</h2>
+          <p>Abaixo estão listados os produtos cadastrados.</p>
+          <button id="newProduct" class="btn-secondary">Cadastrar Novo Produto</button>
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="productList"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+  </html>
